@@ -1,7 +1,7 @@
 local library = {
 Flags = {},
 SectionsOpened = false,
-Theme = "Dark"
+Theme = "DSCODEDEFAULT"
 }
 library.flags = library.Flags
 library.theme = library.Theme
