@@ -7,7 +7,7 @@ library.flags = library.Flags
 library.theme = library.Theme
 
 local Themes = {
-["Dark"] = {
+["DSCODEDEFAULT"] = {
     Topbar = Color3.fromRGB(30, 30, 35),
     TabContainer = Color3.fromRGB(25, 25, 30),
     Lines = Color3.fromRGB(50, 50, 55),
@@ -41,7 +41,7 @@ local Themes = {
     HighlightUIStroke = Color3.fromRGB(79, 79, 86),
     Highlight = Color3.fromRGB(80, 201, 206)
 },
-["Tokyo Night"] = {
+["DSnice"] = {
     Topbar = Color3.fromRGB(39, 40, 57),
     TabContainer = Color3.fromRGB(31, 32, 45),
     Lines = Color3.fromRGB(62, 63, 90),
