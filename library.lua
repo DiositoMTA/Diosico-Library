@@ -1,13 +1,13 @@
 local library = {
 Flags = {},
 SectionsOpened = false,
-Theme = "dscode"
+Theme = "Dark"
 }
 library.flags = library.Flags
 library.theme = library.Theme
 
 local Themes = {
-["dscode"] = {
+["Dark"] = {
     Topbar = Color3.fromRGB(30, 30, 35),
     TabContainer = Color3.fromRGB(25, 25, 30),
     Lines = Color3.fromRGB(50, 50, 55),
@@ -41,7 +41,7 @@ local Themes = {
     HighlightUIStroke = Color3.fromRGB(79, 79, 86),
     Highlight = Color3.fromRGB(80, 201, 206)
 },
-["dsnice"] = {
+["Tokyo Night"] = {
     Topbar = Color3.fromRGB(39, 40, 57),
     TabContainer = Color3.fromRGB(31, 32, 45),
     Lines = Color3.fromRGB(62, 63, 90),
@@ -109,6 +109,7 @@ local Themes = {
     HighlightUIStroke = Color3.fromRGB(79, 94, 124),
     Highlight = Color3.fromRGB(255, 0, 127)
 }
+
 }
 
 local HttpService = game:GetService("HttpService")
