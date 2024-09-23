@@ -1,40 +1,108 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/DiositoMTA/Diosico-Library/refs/heads/main/library.lua'))()
 
-local Window = Library:CreateWindow("Diosico UI", "v1.0.0")
+Library.Theme = "Dark"
+local Flags = Library.Flags
 
-local AimingTab = Window:CreateTab("Aiming")
+local Window = Library:Window({
+   Text = "Baseplate"
+})
 
-local ButtonSection = AimingTab:CreateSection("Botones")
+local Tab = Window:Tab({
+   Text = "Aiming"
+})
 
-ButtonSection:CreateButton("Kill All", function()
-    print("Kill All Triggered")
-end)
+local Tab2 = Window:Tab({
+   Text = "Visual"
+})
 
-ButtonSection:CreateButton("Kill", function()
-    print("Kill Triggered")
-end)
+local Tab3 = Window:Tab({
+   Text = "Visual2"
+})
 
-ButtonSection:CreateDropdown("Choose", {"Option 1", "Option 2", "Option 3"}, function(option)
-    print("Option Selected: " .. option)
-end)
+local Tab4 = Window:Tab({
+   Text = "Visua3"
+})
 
-ButtonSection:CreateSlider("Speed", 0, 100, 25, function(value)
-    print("Speed set to: " .. value)
-end)
+local Section = Tab:Section({
+   Text = "Buttons"
+})
 
-ButtonSection:CreateToggle("Farm", false, function(state)
-    print("Farm Toggled: " .. tostring(state))
-end)
+local Section2 = Tab2:Section({
+   Text = "Buttons2"
+})
 
-ButtonSection:CreateButton("Refresh Dropdown", function()
-    print("Dropdown Refreshed")
-end)
+local Section3 = Tab3:Section({
+   Text = "Buttons2"
+})
+local Section4 = Tab4:Section({
+   Text = "Buttons2"
+})
 
-local VisualTab = Window:CreateTab("Visual")
+Section:Button({
+   Text = "Kill All",
+   Callback = function()
+       warn("Killed All")
+   end
+})
 
-local VisualSection = VisualTab:CreateSection("Visual Options")
-VisualSection:CreateButton("ESP", function()
-    print("ESP Activated")
-end)
+Section2:Button({
+   Text = "Kick",
+   Callback = function()
+       warn("Kick.")
+   end
+})
 
-Window:Toggle(true)
+Section2:Keybind({
+   Text = "Press",
+   Default = Enum.KeyCode.Z,
+   Callback = function()
+       warn("Pressed.")
+   end
+})
+
+Section2:Input({
+   Text = "Lil Input",
+   Callback = function(txt)
+       warn(txt)
+   end
+})
+
+Section:Button({
+   Text = "Kill",
+   Callback = function()
+       warn("Teleported")
+   end
+})
+
+local drop = Section:Dropdown({
+   Text = "Choose",
+   List = {"Idk", "Test"},
+   Callback = function(v)
+       warn(v)
+   end
+})
+
+Section:Slider({
+   Text = "Speed",
+   Default = 25,
+   Minimum = 0,
+   Maximum = 200
+})
+
+Section:Toggle({
+   Text = "Farm",
+   Callback = function(bool)
+       warn(bool)
+   end
+})
+
+Section:Button({
+   Text = "Refresh Dropdown",
+   Callback = function()
+       drop:Remove("Test")
+       wait(2)
+       drop:Add("123")
+   end
+})
+
+Tab:Select()
